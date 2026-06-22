@@ -3,4 +3,3 @@ cypress/screenshots/
 cypress/videos/
 cypress/downloads/
 .cypress-cache/
-package-lock.json
