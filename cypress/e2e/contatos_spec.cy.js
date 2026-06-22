@@ -23,7 +23,7 @@ describe('Agenda de Contatos - Testes Funcionais', () => {
     cy.get('input[type="email"]').type('edit@email.com');
     cy.get('button').contains('Adicionar').click();
 
-    cy.contains(nomeOriginal).parents().contains('Editar').click();
+    cy.contains(nomeOriginal).parents().filter(':has(button)').first().contains('Editar').click();
     const novoNome = `${nomeOriginal} Alterado`;
     cy.get('input[type="text"]').clear().type(novoNome);
     cy.get('button').contains('Salvar').click();
@@ -41,7 +41,7 @@ describe('Agenda de Contatos - Testes Funcionais', () => {
     cy.contains(nomeRemover).should('be.visible');
     
     // Tenta encontrar o botão de excluir próximo ao nome
-    cy.contains(nomeRemover).parents().contains('Deletar').click();
+    cy.contains(nomeRemover).parents().filter(':has(button)').first().contains('Deletar').click();
     
     cy.contains(nomeRemover).should('not.exist');
   });
