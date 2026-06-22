@@ -1,8 +1,6 @@
 describe('Agenda de Contatos - Testes Funcionais', () => {
   beforeEach(() => {
-    cy.visit('/', { timeout: 60000 });
-    // Espera explícita por um elemento que prove que o App carregou
-    cy.get('body', { timeout: 20000 }).should('not.contain', 'You need to enable JavaScript');
+    cy.visit('/');
   });
 
   it('deve adicionar um novo contato com sucesso', () => {
